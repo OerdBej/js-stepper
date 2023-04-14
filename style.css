@@ -14,7 +14,6 @@ body {
 
 .container {
     text-align: center;
-    outline: 1px red solid;
 }
 
 .stepper-container {
@@ -41,7 +40,7 @@ body {
 
 /* the progress line: is the div behind the numbers */
 .stepper {
-    background: rgb(2, 0, 36);
+    background-color: rgb(2, 0, 36);
     background: linear-gradient(
         90deg,
         rgba(2, 0, 36, 1) 0%,
@@ -52,9 +51,51 @@ body {
     top: 50%;
     left: 0;
     height: 3px;
-    /* starts at the beggining at 0*/
-    width: 10%;
+    width: 0%;
     transform: translateY(-50%);
     z-index: -1;
     transition: 0.5s ease;
+}
+
+/* circle */
+
+.circle {
+    background-color: #fff;
+    color: #1632a3;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid rgb(57, 129, 117);
+    transition: 0.5s ease;
+}
+
+/* if there is any active class */
+.circle.active {
+    border-color: rgb(185, 49, 31);
+}
+
+.btn {
+    background-color: #1632a3;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    border: 0;
+    padding: 8px 30px;
+    margin: 5;
+    font-size: 12px;
+}
+
+.btn:active {
+    transform: scale(0.99);
+}
+.btn:focus {
+    outline: yellow;
+}
+.btn:disabled {
+    background-color: gray;
+    cursor: not-allowed;
 }
