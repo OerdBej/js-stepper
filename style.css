@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Muli', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    outline: 1px red solid;
+}
+
+.stepper-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 20px;
+    width: 350px;
+    max-width: 100%;
+}
+
+/* 💡 the line behind the progress bar is a blank content string*/
+.stepper-container::before {
+    content: '';
+    background-color: #e7eaf6;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 3px;
+    width: 100%;
+    z-index: -1;
+}
+
+/* the progress line: is the div behind the numbers */
+.stepper {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+        90deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(9, 9, 121, 1) 35%,
+        rgba(0, 212, 255, 1) 100%
+    );
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 3px;
+    /* starts at the beggining at 0*/
+    width: 10%;
+    transform: translateY(-50%);
+    z-index: -1;
+    transition: 0.5s ease;
+}
